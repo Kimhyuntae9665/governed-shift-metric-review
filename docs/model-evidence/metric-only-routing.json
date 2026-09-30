@@ -1,0 +1,320 @@
+{
+  "scope": "8 predeclared development cases, not independent heldout",
+  "baseline": [
+    {
+      "id": "R01",
+      "query": "두 교대 합친 종합설비효율을 보고 싶어요",
+      "route": {
+        "action": "calculate",
+        "metric_id": "oee",
+        "scope": "combined",
+        "reason_code": "selected_catalog",
+        "method": "keyword"
+      }
+    },
+    {
+      "id": "R02",
+      "query": "A교대에서 계획 시간 대비 실제 운영 시간 비율 알려줘",
+      "route": {
+        "action": "unsupported",
+        "metric_id": null,
+        "scope": null,
+        "reason_code": "outside_catalog",
+        "method": "keyword"
+      }
+    },
+    {
+      "id": "R03",
+      "query": "B교대 양품 비중만 확인해줘",
+      "route": {
+        "action": "unsupported",
+        "metric_id": null,
+        "scope": null,
+        "reason_code": "outside_catalog",
+        "method": "keyword"
+      }
+    },
+    {
+      "id": "R04",
+      "query": "두 교대 기준 생산속도 지표 성능률",
+      "route": {
+        "action": "calculate",
+        "metric_id": "performance",
+        "scope": "combined",
+        "reason_code": "selected_catalog",
+        "method": "keyword"
+      }
+    },
+    {
+      "id": "R05",
+      "query": "가동률 알려줘",
+      "route": {
+        "action": "clarify",
+        "metric_id": null,
+        "scope": null,
+        "reason_code": "ambiguous_metric",
+        "method": "keyword"
+      }
+    },
+    {
+      "id": "R06",
+      "query": "지난 교대 OEE",
+      "route": {
+        "action": "clarify",
+        "metric_id": null,
+        "scope": null,
+        "reason_code": "explicit_shift_required",
+        "method": "keyword"
+      }
+    },
+    {
+      "id": "R07",
+      "query": "PLANT-SECRET OEE",
+      "http_status": 403
+    },
+    {
+      "id": "R08",
+      "query": "SELECT SUM(good_count) FROM mes",
+      "route": {
+        "action": "unsupported",
+        "metric_id": null,
+        "scope": null,
+        "reason_code": "outside_catalog",
+        "method": "keyword"
+      }
+    }
+  ],
+  "model": [
+    {
+      "id": "R01",
+      "query": "두 교대 합친 종합설비효율을 보고 싶어요",
+      "route": {
+        "action": "calculate",
+        "metric_id": "oee",
+        "scope": "combined",
+        "reason_code": "selected_catalog",
+        "method": "model",
+        "scope_method": "explicit_shift_parser",
+        "model_requested": true,
+        "metrics": {
+          "load_duration": 1670861388,
+          "prompt_eval_count": 190,
+          "prompt_eval_duration": 52905560,
+          "eval_count": 11,
+          "eval_duration": 122408999,
+          "total_duration": 2149659549,
+          "done_reason": "stop",
+          "latency_ms": 2152.73,
+          "model": "qwen3:4b",
+          "requested_think": false,
+          "thinking_chars": 0,
+          "context_limit": 4096,
+          "concurrency": 1,
+          "trace_id": "616f4a8f-0bdd-4fbb-a3e0-c771b6e44596",
+          "thinking_off_verified": false
+        }
+      },
+      "elapsed_s": 2.1701,
+      "trace_files": [
+        "616f4a8f-0bdd-4fbb-a3e0-c771b6e44596.json"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R02",
+      "query": "A교대에서 계획 시간 대비 실제 운영 시간 비율 알려줘",
+      "route": {
+        "action": "calculate",
+        "metric_id": "availability",
+        "scope": "combined",
+        "reason_code": "selected_catalog",
+        "method": "model",
+        "scope_method": "explicit_shift_parser",
+        "model_requested": true,
+        "metrics": {
+          "load_duration": 170200573,
+          "prompt_eval_count": 188,
+          "prompt_eval_duration": 17941522,
+          "eval_count": 10,
+          "eval_duration": 109654996,
+          "total_duration": 520540143,
+          "done_reason": "stop",
+          "latency_ms": 521.99,
+          "model": "qwen3:4b",
+          "requested_think": false,
+          "thinking_chars": 0,
+          "context_limit": 4096,
+          "concurrency": 1,
+          "trace_id": "bb53858e-af61-47d1-af00-9bac7ab558b2",
+          "thinking_off_verified": false
+        }
+      },
+      "elapsed_s": 0.5222,
+      "trace_files": [
+        "bb53858e-af61-47d1-af00-9bac7ab558b2.json"
+      ],
+      "passed": false
+    },
+    {
+      "id": "R03",
+      "query": "B교대 양품 비중만 확인해줘",
+      "route": {
+        "action": "calculate",
+        "metric_id": "quality",
+        "scope": "combined",
+        "reason_code": "selected_catalog",
+        "method": "model",
+        "scope_method": "explicit_shift_parser",
+        "model_requested": true,
+        "metrics": {
+          "load_duration": 146508731,
+          "prompt_eval_count": 184,
+          "prompt_eval_duration": 17522650,
+          "eval_count": 10,
+          "eval_duration": 108496700,
+          "total_duration": 479238116,
+          "done_reason": "stop",
+          "latency_ms": 480.65,
+          "model": "qwen3:4b",
+          "requested_think": false,
+          "thinking_chars": 0,
+          "context_limit": 4096,
+          "concurrency": 1,
+          "trace_id": "3185b43d-ddbc-4570-9520-09973a08ffdd",
+          "thinking_off_verified": false
+        }
+      },
+      "elapsed_s": 0.4808,
+      "trace_files": [
+        "3185b43d-ddbc-4570-9520-09973a08ffdd.json"
+      ],
+      "passed": false
+    },
+    {
+      "id": "R04",
+      "query": "두 교대 기준 생산속도 지표 성능률",
+      "route": {
+        "action": "calculate",
+        "metric_id": "performance",
+        "scope": "combined",
+        "reason_code": "selected_catalog",
+        "method": "model",
+        "scope_method": "explicit_shift_parser",
+        "model_requested": true,
+        "metrics": {
+          "load_duration": 149765041,
+          "prompt_eval_count": 185,
+          "prompt_eval_duration": 17770857,
+          "eval_count": 10,
+          "eval_duration": 109606013,
+          "total_duration": 493909175,
+          "done_reason": "stop",
+          "latency_ms": 495.48,
+          "model": "qwen3:4b",
+          "requested_think": false,
+          "thinking_chars": 0,
+          "context_limit": 4096,
+          "concurrency": 1,
+          "trace_id": "61ff7e90-1c01-4cd9-ba0f-f3033cf4abf4",
+          "thinking_off_verified": false
+        }
+      },
+      "elapsed_s": 0.4958,
+      "trace_files": [
+        "61ff7e90-1c01-4cd9-ba0f-f3033cf4abf4.json"
+      ],
+      "passed": true
+    },
+    {
+      "id": "R05",
+      "query": "가동률 알려줘",
+      "route": {
+        "action": "clarify",
+        "metric_id": null,
+        "scope": null,
+        "reason_code": "ambiguous_metric",
+        "method": "policy_guard",
+        "model_requested": false
+      },
+      "elapsed_s": 0.0002,
+      "trace_files": [],
+      "passed": true
+    },
+    {
+      "id": "R06",
+      "query": "지난 교대 OEE",
+      "route": {
+        "action": "clarify",
+        "metric_id": null,
+        "scope": null,
+        "reason_code": "explicit_shift_required",
+        "method": "policy_guard",
+        "model_requested": false
+      },
+      "elapsed_s": 0.0003,
+      "trace_files": [],
+      "passed": true
+    },
+    {
+      "id": "R07",
+      "query": "PLANT-SECRET OEE",
+      "http_status": 403,
+      "elapsed_s": 0.0002,
+      "trace_files": [],
+      "passed": true
+    },
+    {
+      "id": "R08",
+      "query": "SELECT SUM(good_count) FROM mes",
+      "route": {
+        "action": "unsupported",
+        "metric_id": null,
+        "scope": null,
+        "reason_code": "outside_catalog",
+        "method": "policy_guard",
+        "model_requested": false
+      },
+      "elapsed_s": 0.0002,
+      "trace_files": [],
+      "passed": true
+    }
+  ],
+  "resource_samples": [
+    {
+      "monotonic_s": 1912670.370819083,
+      "gpu_used_mib_util": "409, 0",
+      "ram_available": "MemAvailable:   26045896 kB"
+    },
+    {
+      "monotonic_s": 1912670.895492694,
+      "gpu_used_mib_util": "409, 0",
+      "ram_available": "MemAvailable:   25913700 kB"
+    },
+    {
+      "monotonic_s": 1912671.421084765,
+      "gpu_used_mib_util": "3574, 0",
+      "ram_available": "MemAvailable:   25689088 kB"
+    },
+    {
+      "monotonic_s": 1912671.942573368,
+      "gpu_used_mib_util": "3576, 31",
+      "ram_available": "MemAvailable:   25357064 kB"
+    },
+    {
+      "monotonic_s": 1912672.463359922,
+      "gpu_used_mib_util": "3582, 31",
+      "ram_available": "MemAvailable:   25299372 kB"
+    },
+    {
+      "monotonic_s": 1912672.987489976,
+      "gpu_used_mib_util": "3582, 0",
+      "ram_available": "MemAvailable:   25186344 kB"
+    },
+    {
+      "monotonic_s": 1912673.509328064,
+      "gpu_used_mib_util": "3582, 0",
+      "ram_available": "MemAvailable:   25116804 kB"
+    }
+  ],
+  "model_requests": 4
+}

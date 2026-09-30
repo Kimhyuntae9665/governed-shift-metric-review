@@ -1,0 +1,390 @@
+{
+  "schema_version": "expected-scope-v1",
+  "synthetic": true,
+  "datasets": [
+    {
+      "dataset_id": "baseline",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        },
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "B",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "zero_denominator",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "missing_good",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "good_exceeds_total",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "performance_over_100",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "cumulative_counts",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "duplicate_counts",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "unmatched_counts",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "one_to_many_counts",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "overnight",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "NIGHT",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "ambiguous_time_unit",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "mixed_products",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        },
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "B",
+          "product_id": "P-6",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "mixed_cycle_versions",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        },
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "B",
+          "product_id": "P-5",
+          "cycle_version": "IC-2"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "unauthorized_site",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        },
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "B",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "duplicate_time",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "correction_review",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        },
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "B",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "conflicting_revision",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        },
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "B",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "missing_time_b",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        },
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "B",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "unknown_unit_b",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        },
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "B",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    },
+    {
+      "dataset_id": "unmatched_time",
+      "expected_keys": [
+        {
+          "site_id": "PLANT-A",
+          "line_id": "LINE-A",
+          "business_date": "2026-10-01",
+          "shift_id": "A",
+          "product_id": "P-5",
+          "cycle_version": "IC-1"
+        }
+      ],
+      "expected_business_date": "2026-10-01",
+      "timezone": "Asia/Seoul",
+      "completeness_policy": "all explicitly expected authorized shift keys required; missing/quarantined keys block combined metrics, accepted shift metrics remain inspectable"
+    }
+  ]
+}

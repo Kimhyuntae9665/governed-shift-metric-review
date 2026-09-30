@@ -1,0 +1,307 @@
+{
+  "actual_browser": true,
+  "synthetic_sources": true,
+  "automated_demo_actions": true,
+  "frames": [
+    {
+      "file": "frame0000.jpg",
+      "at_s": 0.2228,
+      "sha256": "20d38a4131fb184c3a7342065f3a6640efd49e11e9a624b61f981d80e3e2b62a"
+    },
+    {
+      "file": "frame0001.jpg",
+      "at_s": 0.4549,
+      "sha256": "20d38a4131fb184c3a7342065f3a6640efd49e11e9a624b61f981d80e3e2b62a"
+    },
+    {
+      "file": "frame0002.jpg",
+      "at_s": 0.6754,
+      "sha256": "20d38a4131fb184c3a7342065f3a6640efd49e11e9a624b61f981d80e3e2b62a"
+    },
+    {
+      "file": "frame0003.jpg",
+      "at_s": 0.9049,
+      "sha256": "5842290283b3fbb85e96197b5acb306007bb99062cc596fdf4bc9c7e292c8e59"
+    },
+    {
+      "file": "frame0004.jpg",
+      "at_s": 1.1251,
+      "sha256": "5842290283b3fbb85e96197b5acb306007bb99062cc596fdf4bc9c7e292c8e59"
+    },
+    {
+      "file": "frame0005.jpg",
+      "at_s": 1.3426,
+      "sha256": "5842290283b3fbb85e96197b5acb306007bb99062cc596fdf4bc9c7e292c8e59"
+    },
+    {
+      "file": "frame0006.jpg",
+      "at_s": 1.5731,
+      "sha256": "5842290283b3fbb85e96197b5acb306007bb99062cc596fdf4bc9c7e292c8e59"
+    },
+    {
+      "file": "frame0007.jpg",
+      "at_s": 1.8101,
+      "sha256": "5842290283b3fbb85e96197b5acb306007bb99062cc596fdf4bc9c7e292c8e59"
+    },
+    {
+      "file": "frame0008.jpg",
+      "at_s": 2.0475,
+      "sha256": "5842290283b3fbb85e96197b5acb306007bb99062cc596fdf4bc9c7e292c8e59"
+    },
+    {
+      "file": "frame0009.jpg",
+      "at_s": 2.2749,
+      "sha256": "5842290283b3fbb85e96197b5acb306007bb99062cc596fdf4bc9c7e292c8e59"
+    },
+    {
+      "file": "frame0010.jpg",
+      "at_s": 2.5067,
+      "sha256": "5842290283b3fbb85e96197b5acb306007bb99062cc596fdf4bc9c7e292c8e59"
+    },
+    {
+      "file": "frame0011.jpg",
+      "at_s": 2.741,
+      "sha256": "5842290283b3fbb85e96197b5acb306007bb99062cc596fdf4bc9c7e292c8e59"
+    },
+    {
+      "file": "frame0012.jpg",
+      "at_s": 2.9718,
+      "sha256": "5842290283b3fbb85e96197b5acb306007bb99062cc596fdf4bc9c7e292c8e59"
+    },
+    {
+      "file": "frame0013.jpg",
+      "at_s": 3.3309,
+      "sha256": "2a07d17b53a24f2cacba0fd36447e9f4c43c0bf0591573177cbe778bb861512a"
+    },
+    {
+      "file": "frame0014.jpg",
+      "at_s": 3.5458,
+      "sha256": "2a07d17b53a24f2cacba0fd36447e9f4c43c0bf0591573177cbe778bb861512a"
+    },
+    {
+      "file": "frame0015.jpg",
+      "at_s": 3.7629,
+      "sha256": "2a07d17b53a24f2cacba0fd36447e9f4c43c0bf0591573177cbe778bb861512a"
+    },
+    {
+      "file": "frame0016.jpg",
+      "at_s": 3.9794,
+      "sha256": "2a07d17b53a24f2cacba0fd36447e9f4c43c0bf0591573177cbe778bb861512a"
+    },
+    {
+      "file": "frame0017.jpg",
+      "at_s": 4.5222,
+      "sha256": "ae753b69676f13d236c36a5b8c865cd433b325202edfef220e7e1f7a3555c8e9"
+    },
+    {
+      "file": "frame0018.jpg",
+      "at_s": 4.7417,
+      "sha256": "ae753b69676f13d236c36a5b8c865cd433b325202edfef220e7e1f7a3555c8e9"
+    },
+    {
+      "file": "frame0019.jpg",
+      "at_s": 4.9735,
+      "sha256": "ae753b69676f13d236c36a5b8c865cd433b325202edfef220e7e1f7a3555c8e9"
+    },
+    {
+      "file": "frame0020.jpg",
+      "at_s": 5.2097,
+      "sha256": "ae753b69676f13d236c36a5b8c865cd433b325202edfef220e7e1f7a3555c8e9"
+    },
+    {
+      "file": "frame0021.jpg",
+      "at_s": 5.7584,
+      "sha256": "7080d5e7422cb15352919622df7de1e33d39c706c9eeaaaa868b7aabf9484dcc"
+    },
+    {
+      "file": "frame0022.jpg",
+      "at_s": 5.9884,
+      "sha256": "7080d5e7422cb15352919622df7de1e33d39c706c9eeaaaa868b7aabf9484dcc"
+    },
+    {
+      "file": "frame0023.jpg",
+      "at_s": 6.2067,
+      "sha256": "7080d5e7422cb15352919622df7de1e33d39c706c9eeaaaa868b7aabf9484dcc"
+    },
+    {
+      "file": "frame0024.jpg",
+      "at_s": 6.4393,
+      "sha256": "7080d5e7422cb15352919622df7de1e33d39c706c9eeaaaa868b7aabf9484dcc"
+    },
+    {
+      "file": "frame0025.jpg",
+      "at_s": 6.9313,
+      "sha256": "0805428ce27118108a588a2970eebfb90caac817f88109fe895ff0b9115d0cdd"
+    },
+    {
+      "file": "frame0026.jpg",
+      "at_s": 7.1688,
+      "sha256": "0805428ce27118108a588a2970eebfb90caac817f88109fe895ff0b9115d0cdd"
+    },
+    {
+      "file": "frame0027.jpg",
+      "at_s": 7.4041,
+      "sha256": "0805428ce27118108a588a2970eebfb90caac817f88109fe895ff0b9115d0cdd"
+    },
+    {
+      "file": "frame0028.jpg",
+      "at_s": 7.6397,
+      "sha256": "0805428ce27118108a588a2970eebfb90caac817f88109fe895ff0b9115d0cdd"
+    },
+    {
+      "file": "frame0029.jpg",
+      "at_s": 7.8856,
+      "sha256": "0805428ce27118108a588a2970eebfb90caac817f88109fe895ff0b9115d0cdd"
+    },
+    {
+      "file": "frame0030.jpg",
+      "at_s": 8.2102,
+      "sha256": "b2e5a1b7caf2189591d6427bbe17d71a2e27b605fec7f755b13b4697366f1845"
+    },
+    {
+      "file": "frame0031.jpg",
+      "at_s": 8.4431,
+      "sha256": "b2e5a1b7caf2189591d6427bbe17d71a2e27b605fec7f755b13b4697366f1845"
+    },
+    {
+      "file": "frame0032.jpg",
+      "at_s": 8.6755,
+      "sha256": "b2e5a1b7caf2189591d6427bbe17d71a2e27b605fec7f755b13b4697366f1845"
+    },
+    {
+      "file": "frame0033.jpg",
+      "at_s": 8.9094,
+      "sha256": "b2e5a1b7caf2189591d6427bbe17d71a2e27b605fec7f755b13b4697366f1845"
+    },
+    {
+      "file": "frame0034.jpg",
+      "at_s": 9.1406,
+      "sha256": "b2e5a1b7caf2189591d6427bbe17d71a2e27b605fec7f755b13b4697366f1845"
+    },
+    {
+      "file": "frame0035.jpg",
+      "at_s": 9.3748,
+      "sha256": "b2e5a1b7caf2189591d6427bbe17d71a2e27b605fec7f755b13b4697366f1845"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "16-actual-model-proposal.png",
+      "sha256": "1c3a9138f55a5d6a192b17e94337d262a29a614143e12d307c9bc16432b13908",
+      "actual_ui": true
+    },
+    {
+      "file": "17-model-applied-cpu-receipt.png",
+      "sha256": "bb675bbe1138300d66da70798d63e8304b74a14d28409460f872baea4895df2c",
+      "actual_ui": true
+    },
+    {
+      "file": "18-model-flow-review-record.png",
+      "sha256": "f93e6ee25322139f7d3f631d77b9f43d83186a2ff85ce32fcef4d8929fa789cc",
+      "actual_ui": true
+    },
+    {
+      "file": "19-actual-source-drawer.png",
+      "sha256": "b58ae46e1f7f3f0fe9aa5fdfa92ad5f0a4e6b2d69a95fcec84308f3dd8f0dbec",
+      "actual_ui": true
+    }
+  ],
+  "model_requests": 1,
+  "resource_samples": [
+    {
+      "gpu_mib_util": "409, 0",
+      "ram_available": "MemAvailable:   26005096 kB"
+    },
+    {
+      "gpu_mib_util": "409, 0",
+      "ram_available": "MemAvailable:   25924912 kB"
+    },
+    {
+      "gpu_mib_util": "3574, 0",
+      "ram_available": "MemAvailable:   25649788 kB"
+    },
+    {
+      "gpu_mib_util": "3576, 99",
+      "ram_available": "MemAvailable:   25388840 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 99",
+      "ram_available": "MemAvailable:   25273988 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 37",
+      "ram_available": "MemAvailable:   25258288 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 37",
+      "ram_available": "MemAvailable:   25281340 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 0",
+      "ram_available": "MemAvailable:   25260520 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 0",
+      "ram_available": "MemAvailable:   25242608 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 0",
+      "ram_available": "MemAvailable:   25205216 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 0",
+      "ram_available": "MemAvailable:   25205204 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 0",
+      "ram_available": "MemAvailable:   25213600 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 0",
+      "ram_available": "MemAvailable:   25176680 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 0",
+      "ram_available": "MemAvailable:   25151404 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 0",
+      "ram_available": "MemAvailable:   25178252 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 0",
+      "ram_available": "MemAvailable:   25184312 kB"
+    },
+    {
+      "gpu_mib_util": "3582, 0",
+      "ram_available": "MemAvailable:   25177588 kB"
+    }
+  ],
+  "actual_route": {
+    "action": "calculate",
+    "metric_id": "availability",
+    "scope": "A",
+    "reason_code": "selected_catalog",
+    "method": "model",
+    "scope_method": "explicit_shift_parser",
+    "model_requested": true,
+    "metrics": {
+      "load_duration": 1743426320,
+      "prompt_eval_count": 188,
+      "prompt_eval_duration": 53715152,
+      "eval_count": 10,
+      "eval_duration": 110850156,
+      "total_duration": 2169651406,
+      "done_reason": "stop",
+      "latency_ms": 2171.63,
+      "model": "qwen3:4b",
+      "requested_think": false,
+      "thinking_chars": 0,
+      "context_limit": 4096,
+      "concurrency": 1,
+      "trace_id": "5cfc514f-72be-4acb-97be-2e9a1ebd4808",
+      "thinking_off_verified": false
+    }
+  },
+  "elapsed_s": 9.5254
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "phase": "initial-routing",
+    "before": "MemAvailable:   26120464 kB",
+    "after": "MemAvailable:   24932824 kB",
+    "min_available_kib": 24932824
+  },
+  {
+    "phase": "final-routing",
+    "before": "MemAvailable:   26092892 kB",
+    "after": "MemAvailable:   25105232 kB",
+    "min_available_kib": 25105232
+  },
+  {
+    "phase": "metric-only-routing",
+    "before": "MemAvailable:   26045896 kB",
+    "after": "MemAvailable:   25116804 kB",
+    "min_available_kib": 25116804
+  },
+  {
+    "phase": "final-metric-routing",
+    "before": "MemAvailable:   26091320 kB",
+    "after": "MemAvailable:   24995068 kB",
+    "min_available_kib": 24995068
+  }
+]

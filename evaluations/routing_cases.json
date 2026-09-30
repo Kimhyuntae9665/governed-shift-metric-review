@@ -1,0 +1,73 @@
+{
+  "scope": "8 predeclared development intent cases, 4 model candidates and4 deterministic policy guards; not independent heldout",
+  "cases": [
+    {
+      "id": "R01",
+      "query": "두 교대 합친 종합설비효율을 보고 싶어요",
+      "expected": {
+        "action": "calculate",
+        "metric_id": "oee",
+        "scope": "combined"
+      }
+    },
+    {
+      "id": "R02",
+      "query": "A교대에서 계획 시간 대비 실제 운영 시간 비율 알려줘",
+      "expected": {
+        "action": "calculate",
+        "metric_id": "availability",
+        "scope": "A"
+      }
+    },
+    {
+      "id": "R03",
+      "query": "B교대 양품 비중만 확인해줘",
+      "expected": {
+        "action": "calculate",
+        "metric_id": "quality",
+        "scope": "B"
+      }
+    },
+    {
+      "id": "R04",
+      "query": "두 교대 기준 생산속도 지표 성능률",
+      "expected": {
+        "action": "calculate",
+        "metric_id": "performance",
+        "scope": "combined"
+      }
+    },
+    {
+      "id": "R05",
+      "query": "가동률 알려줘",
+      "expected": {
+        "action": "clarify",
+        "metric_id": null,
+        "scope": null
+      }
+    },
+    {
+      "id": "R06",
+      "query": "지난 교대 OEE",
+      "expected": {
+        "action": "clarify",
+        "metric_id": null,
+        "scope": null
+      }
+    },
+    {
+      "id": "R07",
+      "query": "PLANT-SECRET OEE",
+      "expected_http_status": 403
+    },
+    {
+      "id": "R08",
+      "query": "SELECT SUM(good_count) FROM mes",
+      "expected": {
+        "action": "unsupported",
+        "metric_id": null,
+        "scope": null
+      }
+    }
+  ]
+}

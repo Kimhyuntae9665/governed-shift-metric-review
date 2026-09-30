@@ -1,0 +1,301 @@
+{
+  "schema_version": "frozen-gold-v1",
+  "runtime_read_forbidden": true,
+  "default_request": {
+    "metric_id": "oee",
+    "business_date": "2026-10-01",
+    "as_of_cutoff": "2026-10-02T00:30:00+09:00",
+    "site_ids": [
+      "PLANT-A"
+    ]
+  },
+  "cases": [
+    {
+      "id": "baseline",
+      "dataset_id": "baseline",
+      "status": "supported",
+      "accepted_pairs": 2,
+      "metrics": {
+        "availability": "15/16",
+        "performance": "1",
+        "quality": "49/50",
+        "oee": "147/160"
+      },
+      "percentages": {
+        "availability": "93.75",
+        "performance": "100",
+        "quality": "98",
+        "oee": "91.875"
+      },
+      "shift_oee": {
+        "PLANT-A/A": "27/40",
+        "PLANT-A/B": "1"
+      },
+      "naive_average": "67/80",
+      "average_gap_percentage_points": "65/8"
+    },
+    {
+      "id": "zero_denominator",
+      "dataset_id": "zero_denominator",
+      "status": "partial",
+      "metrics": {
+        "availability": null,
+        "performance": null,
+        "quality": null,
+        "oee": null
+      }
+    },
+    {
+      "id": "missing_good",
+      "dataset_id": "missing_good",
+      "status": "partial",
+      "metrics": {
+        "availability": "3/4",
+        "performance": "1",
+        "quality": null,
+        "oee": null
+      }
+    },
+    {
+      "id": "good_exceeds_total",
+      "dataset_id": "good_exceeds_total",
+      "status": "partial",
+      "reason": "good_exceeds_total",
+      "metrics": {
+        "availability": "3/4",
+        "performance": null,
+        "quality": null,
+        "oee": null
+      }
+    },
+    {
+      "id": "performance_over_100",
+      "dataset_id": "performance_over_100",
+      "status": "supported",
+      "metrics": {
+        "availability": "3/4",
+        "performance": "10/9",
+        "quality": "9/10",
+        "oee": "3/4"
+      },
+      "flag": "performance_above_one"
+    },
+    {
+      "id": "cumulative_counts",
+      "dataset_id": "cumulative_counts",
+      "status": "partial",
+      "reason": "unsupported_counts_kind",
+      "metrics": {
+        "availability": "3/4",
+        "performance": null,
+        "quality": null,
+        "oee": null
+      }
+    },
+    {
+      "id": "duplicate_counts",
+      "dataset_id": "duplicate_counts",
+      "status": "supported",
+      "metrics": {
+        "availability": "3/4",
+        "performance": "1",
+        "quality": "9/10",
+        "oee": "27/40"
+      },
+      "flag": "duplicate_replay_skipped"
+    },
+    {
+      "id": "unmatched_counts",
+      "dataset_id": "unmatched_counts",
+      "status": "partial",
+      "reason": "unmatched_count",
+      "metrics": {
+        "availability": null,
+        "performance": null,
+        "quality": "9/10",
+        "oee": null
+      }
+    },
+    {
+      "id": "one_to_many_counts",
+      "dataset_id": "one_to_many_counts",
+      "status": "partial",
+      "reason": "ambiguous_join",
+      "metrics": {
+        "availability": "3/4",
+        "performance": null,
+        "quality": null,
+        "oee": null
+      }
+    },
+    {
+      "id": "overnight",
+      "dataset_id": "overnight",
+      "status": "supported",
+      "business_date": "2026-10-01",
+      "metrics": {
+        "availability": "3/4",
+        "performance": "1",
+        "quality": "9/10",
+        "oee": "27/40"
+      }
+    },
+    {
+      "id": "ambiguous_time_unit",
+      "dataset_id": "ambiguous_time_unit",
+      "status": "partial",
+      "reason": "unsupported_time_unit",
+      "metrics": {
+        "availability": null,
+        "performance": null,
+        "quality": "9/10",
+        "oee": null
+      }
+    },
+    {
+      "id": "mixed_products",
+      "dataset_id": "mixed_products",
+      "status": "unsupported",
+      "reason": "mixed_product_or_cycle_version"
+    },
+    {
+      "id": "mixed_cycle_versions",
+      "dataset_id": "mixed_cycle_versions",
+      "status": "unsupported",
+      "reason": "mixed_product_or_cycle_version"
+    },
+    {
+      "id": "unauthorized_site",
+      "dataset_id": "unauthorized_site",
+      "status": "supported",
+      "accepted_pairs": 2,
+      "metrics": {
+        "availability": "15/16",
+        "performance": "1",
+        "quality": "49/50",
+        "oee": "147/160"
+      },
+      "forbidden_text": "PLANT-SECRET"
+    },
+    {
+      "id": "duplicate_time",
+      "dataset_id": "duplicate_time",
+      "status": "supported",
+      "metrics": {
+        "availability": "3/4",
+        "performance": "1",
+        "quality": "9/10",
+        "oee": "27/40"
+      },
+      "flag": "duplicate_replay_skipped"
+    },
+    {
+      "id": "unmatched_time",
+      "dataset_id": "unmatched_time",
+      "status": "partial",
+      "reason": "unmatched_time",
+      "metrics": {
+        "availability": "3/4",
+        "performance": null,
+        "quality": null,
+        "oee": null
+      }
+    },
+    {
+      "id": "ambiguous_uptime",
+      "query": {
+        "metric_id": "uptime"
+      },
+      "status": "clarification_required",
+      "reason": "approved_metric_required"
+    },
+    {
+      "id": "ambiguous_last_shift",
+      "query": {
+        "shift_ids": [
+          "last shift"
+        ]
+      },
+      "status": "clarification_required",
+      "reason": "explicit_shift_required"
+    },
+    {
+      "id": "correction_before",
+      "dataset_id": "correction_review",
+      "as_of_cutoff": "2026-10-01T23:30:00+09:00",
+      "status": "supported",
+      "accepted_pairs": 2,
+      "metrics": {
+        "availability": "15/16",
+        "performance": "1",
+        "quality": "44/45",
+        "oee": "11/12"
+      },
+      "oee_percent_four_places": "91.6667"
+    },
+    {
+      "id": "correction_after",
+      "dataset_id": "correction_review",
+      "status": "supported",
+      "accepted_pairs": 2,
+      "metrics": {
+        "availability": "15/16",
+        "performance": "1",
+        "quality": "49/50",
+        "oee": "147/160"
+      },
+      "oee_percent_four_places": "91.8750"
+    },
+    {
+      "id": "conflicting_revision",
+      "dataset_id": "conflicting_revision",
+      "status": "partial",
+      "accepted_pairs": 1,
+      "expected_pairs": 2,
+      "reason": "conflicting_revision",
+      "metrics": {
+        "availability": "15/16",
+        "performance": null,
+        "quality": null,
+        "oee": null
+      },
+      "accepted_shift_oee": {
+        "PLANT-A/B": "1"
+      }
+    },
+    {
+      "id": "missing_time_b",
+      "dataset_id": "missing_time_b",
+      "status": "partial",
+      "accepted_pairs": 1,
+      "expected_pairs": 2,
+      "reason": "unmatched_count",
+      "metrics": {
+        "availability": null,
+        "performance": null,
+        "quality": "49/50",
+        "oee": null
+      },
+      "accepted_shift_oee": {
+        "PLANT-A/A": "27/40"
+      }
+    },
+    {
+      "id": "unknown_unit_b",
+      "dataset_id": "unknown_unit_b",
+      "status": "partial",
+      "accepted_pairs": 1,
+      "expected_pairs": 2,
+      "reason": "unsupported_time_unit",
+      "metrics": {
+        "availability": null,
+        "performance": null,
+        "quality": "49/50",
+        "oee": null
+      },
+      "accepted_shift_oee": {
+        "PLANT-A/A": "27/40"
+      }
+    }
+  ]
+}

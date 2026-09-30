@@ -1,0 +1,68 @@
+{
+  "schema_version": "metric-catalog-v1",
+  "synthetic": true,
+  "approval": {
+    "status": "approved",
+    "approved_by": "synthetic-process-owner",
+    "revision": 1
+  },
+  "rule_version": "governed-oee-v1",
+  "max_records_per_export": 1000,
+  "join_keys": [
+    "site_id",
+    "line_id",
+    "business_date",
+    "shift_id",
+    "product_id",
+    "cycle_version"
+  ],
+  "units": {
+    "count": "each",
+    "time_conversions_to_s": {
+      "s": 1,
+      "min": 60
+    }
+  },
+  "cycles": [
+    {
+      "product_id": "P-5",
+      "cycle_version": "IC-1",
+      "ideal_cycle_seconds": 30,
+      "approved": true
+    },
+    {
+      "product_id": "P-5",
+      "cycle_version": "IC-2",
+      "ideal_cycle_seconds": 25,
+      "approved": true
+    },
+    {
+      "product_id": "P-6",
+      "cycle_version": "IC-1",
+      "ideal_cycle_seconds": 45,
+      "approved": true
+    }
+  ],
+  "metrics": {
+    "availability": {
+      "numerator": "run_time_s",
+      "denominator": "planned_time_s"
+    },
+    "performance": {
+      "numerator": "total_count * ideal_cycle_seconds",
+      "denominator": "run_time_s"
+    },
+    "quality": {
+      "numerator": "good_count",
+      "denominator": "total_count"
+    },
+    "oee": {
+      "numerator": "good_count * ideal_cycle_seconds",
+      "denominator": "planned_time_s"
+    }
+  },
+  "aggregation": "sum numerators and denominators across one approved product/cycle version; no arithmetic average of shift percentages",
+  "business_date": "explicit export field; overnight date must not be inferred",
+  "revision_policy": "Filter source record-time issued_at <= explicit as_of_cutoff BEFORE conflict detection; then select maximum integer revision. Exact same-content replay skipped; conflicting same identity+revision quarantined with no fallback. This reconstructs historical source record revisions, not historical receiver knowledge.",
+  "scope": "synthetic metric review, no production benchmark or ROI"
+}

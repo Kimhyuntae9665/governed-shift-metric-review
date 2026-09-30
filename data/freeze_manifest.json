@@ -1,0 +1,19 @@
+{
+  "schema_version": "pre-code-freeze-v1",
+  "synthetic": true,
+  "calculation_code_written": false,
+  "parent_reconciliation_required_before_code": true,
+  "record_timestamp_semantics": "issued_at is source-record time; received_at is export receipt time; historical cutoff reconstructs recorded revisions, not receiver knowledge",
+  "files": {
+    "data/mes_counts.json": "deb9b2006c8a9757aee4e3347aa26e76f1c84bef05b172ae1a9a66e68bbcc638",
+    "data/shift_time.json": "f8b87e94a3f533635dfa66d432efb351fbf892fc87f9025f9e9adeb508de3957",
+    "data/metric_catalog.json": "00cd0e6bbfa7b8b2a4592335702dfd034fa051f018b7a2c9f831db62848edc32",
+    "data/scope_manifest.json": "1d9e9ffe2f7e14bc487b86b11c5266cb5e8db0a9d6a830c7afcd6500247f90cd",
+    "evaluations/gold.json": "822b4932fa8ca9718547cfb8427441d65e25c963d0a85ac55559f29f63359d11"
+  },
+  "gold_case_count": 23,
+  "baseline_expected_shifts": [
+    "A",
+    "B"
+  ]
+}

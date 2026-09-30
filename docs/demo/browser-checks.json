@@ -1,0 +1,542 @@
+{
+  "actual_browser": true,
+  "synthetic": true,
+  "model_requests": 0,
+  "checks": [
+    "default intent proposal is CPU keyword mode",
+    "baseline exact availability",
+    "baseline exact performance",
+    "baseline exact quality",
+    "baseline exact oee",
+    "baseline fixed A/B column headers",
+    "baseline average and gap are server exact values",
+    "percent decimal strings retain four decimals without regrouping or rounding",
+    "baseline expected manifest coverage A+B",
+    "explicit minute-to-second conversion preserved",
+    "capture excludes credentials and private host/path",
+    "correction-before exact oee",
+    "correction-before fixed A/B column headers",
+    "early cutoff selects original record revision1",
+    "capture excludes credentials and private host/path",
+    "correction-after exact oee",
+    "correction-after fixed A/B column headers",
+    "later cutoff selects corrected record revision2",
+    "capture excludes credentials and private host/path",
+    "conflicting-revision exact oee",
+    "conflicting-revision fixed A/B column headers",
+    "conflicting revision quarantined without fallback",
+    "capture excludes credentials and private host/path",
+    "missing-time-b exact availability",
+    "missing-time-b exact performance",
+    "missing-time-b exact quality",
+    "missing-time-b exact oee",
+    "missing-time-b fixed A/B column headers",
+    "incomplete scope retains A+B expectation",
+    "undefined incomplete combined results stay visible",
+    "capture excludes credentials and private host/path",
+    "unknown-unit-b exact availability",
+    "unknown-unit-b exact quality",
+    "unknown-unit-b exact oee",
+    "unknown-unit-b fixed A/B column headers",
+    "incomplete scope retains A+B expectation",
+    "undefined incomplete combined results stay visible",
+    "capture excludes credentials and private host/path",
+    "missing-good exact availability",
+    "missing-good exact performance",
+    "missing-good exact quality",
+    "missing-good exact oee",
+    "missing-good fixed A/B column headers",
+    "capture excludes credentials and private host/path",
+    "performance-over-100 exact performance",
+    "performance-over-100 exact oee",
+    "performance-over-100 fixed A/B column headers",
+    "performance above100 is retained and flagged",
+    "capture excludes credentials and private host/path",
+    "duplicate-counts exact oee",
+    "duplicate-counts fixed A/B column headers",
+    "exact duplicate replay skipped once",
+    "shift-a exact oee",
+    "shift-a fixed A/B column headers",
+    "nonselected shift shown outside scope",
+    "shift-b exact oee",
+    "shift-b fixed A/B column headers",
+    "nonselected shift shown outside scope",
+    "source drawer original record and hash provenance",
+    "native accessibility tree dialog name matches evidence title",
+    "native evidence dialog initially focuses close control",
+    "receipt time remains later than historical cutoffs",
+    "capture excludes credentials and private host/path",
+    "drawer close restores originating source focus",
+    "Escape keyboard dismissal restores originating source focus",
+    "intent proposal does not silently apply or calculate",
+    "human proposal acknowledgement required",
+    "capture excludes credentials and private host/path",
+    "human applies explicit metric/scope and hides previous receipt",
+    "analyst cannot acknowledge receipt review",
+    "reviewer sees same fresh receipt and separate acknowledgement gate",
+    "arithmetic receipt acknowledgement recorded",
+    "duplicate receipt acknowledgement is idempotent",
+    "capture excludes credentials and private host/path",
+    "changed cutoff hides historical receipt result and review until recalculation",
+    "explicit business date and offset cutoff do not shift under Los_Angeles",
+    "dense table and metadata fonts at least14px",
+    "main controls and long body fonts at least16px",
+    "stale source receipt shell hides result and review (browser display-boundary regression)",
+    "large exact percentage and fraction strings render without Number conversion (browser display-boundary regression)",
+    "visible task text contrast at least4.5",
+    "desktop no horizontal page overflow",
+    "200 percent zoom-equivalent reflow has no page overflow",
+    "capture excludes credentials and private host/path",
+    "mobile layout stays at requested390 CSS pixels without automatic shrinking",
+    "mobile no horizontal page overflow",
+    "capture excludes credentials and private host/path",
+    "mobile selected metric is visible in viewport without occlusion",
+    "capture excludes credentials and private host/path",
+    "other-site identity clears previous authorized receipt and source data",
+    "denied source response neutral without unauthorized row identifiers",
+    "capture excludes credentials and private host/path"
+  ],
+  "cases": [
+    {
+      "id": "baseline",
+      "dataset": "baseline",
+      "cutoff": "2026-10-02T00:30:00+09:00",
+      "scope": "combined",
+      "passed": true
+    },
+    {
+      "id": "correction-before",
+      "dataset": "correction_review",
+      "cutoff": "2026-10-01T23:30:00+09:00",
+      "scope": "combined",
+      "passed": true
+    },
+    {
+      "id": "correction-after",
+      "dataset": "correction_review",
+      "cutoff": "2026-10-02T00:30:00+09:00",
+      "scope": "combined",
+      "passed": true
+    },
+    {
+      "id": "conflicting-revision",
+      "dataset": "conflicting_revision",
+      "cutoff": "2026-10-02T00:30:00+09:00",
+      "scope": "combined",
+      "passed": true
+    },
+    {
+      "id": "missing-time-b",
+      "dataset": "missing_time_b",
+      "cutoff": "2026-10-02T00:30:00+09:00",
+      "scope": "combined",
+      "passed": true
+    },
+    {
+      "id": "unknown-unit-b",
+      "dataset": "unknown_unit_b",
+      "cutoff": "2026-10-02T00:30:00+09:00",
+      "scope": "combined",
+      "passed": true
+    },
+    {
+      "id": "missing-good",
+      "dataset": "missing_good",
+      "cutoff": "2026-10-02T00:30:00+09:00",
+      "scope": "combined",
+      "passed": true
+    },
+    {
+      "id": "performance-over-100",
+      "dataset": "performance_over_100",
+      "cutoff": "2026-10-02T00:30:00+09:00",
+      "scope": "combined",
+      "passed": true
+    },
+    {
+      "id": "duplicate-counts",
+      "dataset": "duplicate_counts",
+      "cutoff": "2026-10-02T00:30:00+09:00",
+      "scope": "combined",
+      "passed": true
+    },
+    {
+      "id": "shift-a",
+      "dataset": "baseline",
+      "cutoff": "2026-10-02T00:30:00+09:00",
+      "scope": "A",
+      "passed": true
+    },
+    {
+      "id": "shift-b",
+      "dataset": "baseline",
+      "cutoff": "2026-10-02T00:30:00+09:00",
+      "scope": "B",
+      "passed": true
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "01-baseline.png",
+      "sha256": "ced866fece8a722d3297d52921b317c19cb188347d96ccf74aa3cad9fa27aef8",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 505.65625,
+        "bottom": 954.171875,
+        "rows": 4
+      }
+    },
+    {
+      "file": "02-correction-before.png",
+      "sha256": "1fce9c132213886b3c5f6b2a1025dcaf032cd3ff36ac1ee452f22c974db87817",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 505.65625,
+        "bottom": 954.171875,
+        "rows": 4
+      }
+    },
+    {
+      "file": "03-correction-after.png",
+      "sha256": "ff2b5d7dce82d14688f696fafbcbf5b092ddc7317650d7d4f8ffe578616e6ef3",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 505.65625,
+        "bottom": 954.171875,
+        "rows": 4
+      }
+    },
+    {
+      "file": "04-conflicting-revision.png",
+      "sha256": "81b382e87d2541024d3d2a7ae1dc06d689d9aab21d967b271ef694fb7aa79c1e",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 505.65625,
+        "bottom": 954.171875,
+        "rows": 4
+      }
+    },
+    {
+      "file": "05-missing-time-b.png",
+      "sha256": "6f0e416d6937d89638032ea99e1bcec8e5baa7933889914f8e6af3edbce5e4cd",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 505.65625,
+        "bottom": 954.171875,
+        "rows": 4
+      }
+    },
+    {
+      "file": "06-unknown-unit-b.png",
+      "sha256": "4d581223c985b28a910b827dcce5b38c5166b25b0b026772297e564c317df01d",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 505.65625,
+        "bottom": 954.171875,
+        "rows": 4
+      }
+    },
+    {
+      "file": "07-missing-good.png",
+      "sha256": "22d4c8aff952af5301140111b6d58b5b73e5e2c36f4c83aa6e5374b066ff9641",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 505.65625,
+        "bottom": 891.390625,
+        "rows": 4
+      }
+    },
+    {
+      "file": "08-performance-over-100.png",
+      "sha256": "6c85a10c784550168320435369deb41972bdefa793c063c34245eefcdd2fde99",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 505.65625,
+        "bottom": 954.171875,
+        "rows": 4
+      }
+    },
+    {
+      "file": "09-original-evidence.png",
+      "sha256": "f251884cc4dea605ea3d715c3047fd56abdf518f561eb8eb13668f2bd724c8e4",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 505.65625,
+        "bottom": 954.171875,
+        "rows": 4
+      }
+    },
+    {
+      "file": "10-intent-proposal.png",
+      "sha256": "e686b139323b0c70f21b127931fb48f5d97d3d239f778392b6fce5d612441591",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 606
+      },
+      "table": {
+        "top": -100.34375,
+        "bottom": 348.171875,
+        "rows": 4
+      }
+    },
+    {
+      "file": "11-review-recorded.png",
+      "sha256": "626484ffa205df414a07cd55bf203d0d583bf236e7ce06161b516db3f44756e8",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 606
+      },
+      "table": {
+        "top": -100.34375,
+        "bottom": 348.171875,
+        "rows": 4
+      }
+    },
+    {
+      "file": "12-zoom-reflow.png",
+      "sha256": "f68f11f998fa8b0f6772f42f2a279c749596eeb121d60562623787ac2c287eaa",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 720,
+        "height": 600
+      },
+      "visual_viewport": {
+        "width": 705,
+        "height": 600,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 1769.96875,
+        "bottom": 2174.484375,
+        "rows": 4
+      }
+    },
+    {
+      "file": "13-mobile.png",
+      "sha256": "21bbb47172e1db353109f277697ba20d5926357c215be5bd9418d2a882e7ecc6",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "visual_viewport": {
+        "width": 390,
+        "height": 844,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 2074.796875,
+        "bottom": 2591.265625,
+        "rows": 4
+      }
+    },
+    {
+      "file": "14-mobile-results.png",
+      "sha256": "8951b0f4abbeb9b50d9cb2fa52334636d62a8c3ad76cc1991e21e9f4652d9dba",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "visual_viewport": {
+        "width": 390,
+        "height": 844,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 1830
+      },
+      "table": {
+        "top": 244.796875,
+        "bottom": 761.265625,
+        "rows": 4
+      }
+    },
+    {
+      "file": "15-neutral-acl.png",
+      "sha256": "4c746dfec56b1721d3a92cc9f3c399c742ffafce16922d1954df8e9491c8b443",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 505.65625,
+        "bottom": 822.171875,
+        "rows": 4
+      }
+    }
+  ],
+  "minimum_checked_text_contrast": 4.888,
+  "passed": true
+}
