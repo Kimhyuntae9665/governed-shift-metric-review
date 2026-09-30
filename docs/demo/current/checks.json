@@ -1,0 +1,88 @@
+{
+  "checks": [
+    "large Korean task title",
+    "desktop no horizontal overflow",
+    "reference canvas token",
+    "source and result equal panels",
+    "baseline combined exact OEE",
+    "counterexample gap shown",
+    "admitted source original row visible",
+    "source dialog returns keyboard focus",
+    "before correction exact OEE",
+    "after correction exact OEE",
+    "conflict blocks combined OEE",
+    "missing good is unknown, not zero",
+    "390px page reflows without horizontal overflow",
+    "390px title does not clip"
+  ],
+  "images": [
+    {
+      "file": "01-combined-result.png",
+      "sha256": "e8920fa4af0c35cb791a159c583da7eb0203ee3ef4a44bb9bdfc71934eb50f47",
+      "caption": "승인 지표·합산 분자와 분모·원본 행",
+      "actual_browser": true
+    },
+    {
+      "file": "02-accepted-sources.png",
+      "sha256": "7964cc2cbabe10753ad4429f0c8e025f7aefc264722809d03480facddabe81b4",
+      "caption": "채택 행과 원본 열람",
+      "actual_browser": true
+    },
+    {
+      "file": "03-source-detail.png",
+      "sha256": "513a6499127cb3e85af361c4bda9c2e27359ce7ed16d68ee5ab43f676b83c0fe",
+      "caption": "원본 행·정확한 표시값·출처 해시",
+      "actual_browser": true
+    },
+    {
+      "file": "04-before-correction.png",
+      "sha256": "5d80a888e78ff6a31820b23fbd91bf732bdb5df64da58acbe37a11a655c35616",
+      "caption": "23:30 기록 기준·정정 전 11/12",
+      "actual_browser": true
+    },
+    {
+      "file": "05-after-correction.png",
+      "sha256": "72437afdb2244ee3733b70bae41e87bd9553c6f949213c60958d7f394145138e",
+      "caption": "00:30 기록 기준·정정 후 147/160",
+      "actual_browser": true
+    },
+    {
+      "file": "06-superseded-row.png",
+      "sha256": "d972cac3c5b5cd664bd856da616d7c4b1d87b5bc1dd048076656e6494603b2f7",
+      "caption": "이전 개정 제외와 정정 이력",
+      "actual_browser": true
+    },
+    {
+      "file": "07-conflict-quarantine.png",
+      "sha256": "9f9465a01787cc6dd3b3680d1c25b607b76355210ed10e8bc2d305dc78351227",
+      "caption": "동일 개정 충돌·격리·정의되지 않음",
+      "actual_browser": true
+    },
+    {
+      "file": "08-missing-good.png",
+      "sha256": "b8e7332f1fbf8743a5c5cf6195248f66582337f94cbbd3831ac5f68eb540b3c2",
+      "caption": "양품 누락·가동률과 미정의 OEE",
+      "actual_browser": true
+    },
+    {
+      "file": "09-review-history.png",
+      "sha256": "7de5758ef4c7b19228c136bb38333ae10eb8d21fb14a3400d36d1534ba6341bf",
+      "caption": "산술 영수증 검토 기록·이력",
+      "actual_browser": true
+    },
+    {
+      "file": "10-mobile-390.png",
+      "sha256": "fcb4f731ed39f419783836b1096d119a2ebedc1682a3770ddb99d0b68b3fcdb2",
+      "caption": "390px 화면·선택과 결과",
+      "actual_browser": true
+    }
+  ],
+  "model_requests": 0,
+  "port": 19104,
+  "synthetic": true,
+  "video": {
+    "file": "workflow.mp4",
+    "sha256": "23b95f0c76b539cd3724b011363d14a5ed0d0ff115bb14434803dfb169793189",
+    "source": "Playwright actual Chrome recording, codec-only ffmpeg conversion; no overlays or compositing"
+  }
+}

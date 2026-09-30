@@ -1,5 +1,8 @@
 # Actual UI gallery and workflow
 
+> **이전 UI 기록:** 이 폴더의 기존 스크린샷과 영상은 P09 v2 화면 개편 전 상태입니다. 현재 화면과 영상은 [current/README.md](current/README.md)를 참조하세요.
+
+
 All images are actual browser viewport captures with synthetic source rows. 01–15 are CPU scenarios and explicitly declared display-boundary tests. 16–19 show one genuine local-model proposal and the ensuing deterministic calculation/review. No model-success screen was injected. Automated demo controls acknowledge only this synthetic receipt; this is not an actual factory operator approval.
 
 [Workflow video](video/workflow.mp4) · [recording provenance](video/capture-provenance.json) · [CPU browser evidence](browser-checks.json)

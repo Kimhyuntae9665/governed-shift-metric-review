@@ -10,6 +10,52 @@ Browser·고정 JSON → Python CPU 권한·개정·조인·Fraction 계산 → 
 
 > 이 저장소는 합성 데이터에 대한 재현 가능한 자체 검증입니다. 실제 공장 OEE·생산성·ROI 개선, 제조 전문가 검증, 운영용 SSO를 입증하지 않습니다.
 
+## 현재 화면 · P09 v2 기준
+
+원본과 계산 결과를 같은 높이의 2열 카드에 두고, 선택 조건·기록 기준 시점·검토 근거를 따라 읽도록 정리했습니다. 아래 이미지는 **2026-09-30 현재 UI를 실제 Chrome에서 캡처**했습니다. 합성 자료와 CPU 계산이며 이 화면 확인 과정의 모델 호출은 0회입니다. [현재 동작 영상](docs/demo/current/workflow.mp4)은 같은 Chrome 화면의 실제 상호작용 기록을 코덱만 변환한 것입니다. [캡처 해시·검증 기록](docs/demo/current/README.md)을 함께 제공합니다.
+
+1. 선택한 승인 지표와 원본 행, A·B 합산 영수증. 합산 OEE는 정확한 147/160이며 83.75%는 잘못된 단순평균의 반례입니다.
+
+   ![승인 지표와 교대 A B 합산 결과](docs/demo/current/01-combined-result.png)
+
+2. 채택 행과 원본 근거 버튼.
+
+   ![채택된 수집 행과 처리 근거](docs/demo/current/02-accepted-sources.png)
+
+3. 허용된 원본 행·출처 해시·처리 상태를 함께 여는 근거 창.
+
+   ![원본 행과 출처 해시](docs/demo/current/03-source-detail.png)
+
+4. 정정 전 23:30 기록 기준의 합산 OEE 11/12.
+
+   ![정정 전 기록 기준 계산](docs/demo/current/04-before-correction.png)
+
+5. 정정 후 00:30 기록 기준의 합산 OEE 147/160.
+
+   ![정정 후 기록 기준 계산](docs/demo/current/05-after-correction.png)
+
+6. 현재 합산에서 제외된 이전 개정 기록.
+
+   ![이전 개정 행과 정정 이력](docs/demo/current/06-superseded-row.png)
+
+7. 동일 개정 충돌 시 행 격리와 미정의 합산 결과.
+
+   ![동일 개정 충돌과 격리 결과](docs/demo/current/07-conflict-quarantine.png)
+
+8. 양품 누락 시 0으로 대체하지 않고 가동률과 미정의 OEE를 분리.
+
+   ![양품 값 누락과 미정의 지표](docs/demo/current/08-missing-good.png)
+
+9. 검토 담당자의 영수증 확인 기록과 이력. 통제 효과나 생산 성과 승인과 다릅니다.
+
+   ![산술 영수증 검토 기록](docs/demo/current/09-review-history.png)
+
+10. 실제 390px 모바일 화면의 선택·근거·결과 순서.
+
+    ![390px 모바일 화면](docs/demo/current/10-mobile-390.png)
+
+이전 [화면 갤러리와 영상](docs/demo/README.md)은 **개편 전 기록**으로 남겨 두었습니다. 현재 UI의 재현 근거는 위 현재 화면 묶음입니다.
+
 ## 처음 실행할 업무
 
 1. 분석 담당자로 데이터 사례·업무일·원본 기록 기준 시점·교대를 선택합니다.
