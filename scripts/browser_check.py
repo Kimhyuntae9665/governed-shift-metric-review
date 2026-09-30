@@ -78,9 +78,9 @@ class Browser:
  def until(self,expression):return self.js(f"(async()=>{{const end=Date.now()+20000;while(Date.now()<end){{if({expression})return true;await new Promise(r=>setTimeout(r,80));}}throw new Error('UI wait expired');}})()")
 
 def main():
- parser=argparse.ArgumentParser();parser.add_argument("--cdp",default="http://127.0.0.1:19085");args=parser.parse_args()
+ parser=argparse.ArgumentParser();parser.add_argument("--cdp",default="http://127.0.0.1:19085");parser.add_argument("--app",default=APP);parser.add_argument("--output",default="artifacts/browser");parser.add_argument("--source-boundaries-only",action="store_true",help="Use an isolated synthetic large-integer fixture listener; never alter frozen live inputs");args=parser.parse_args()
  with urllib.request.urlopen(urllib.request.Request(args.cdp+"/json/new?"+quote("about:blank",safe=""),method="PUT"),timeout=10) as response:page=json.load(response)
- browser=Browser(page["webSocketDebuggerUrl"]);directory=ROOT/"artifacts"/"browser";directory.mkdir(parents=True,exist_ok=True)
+ browser=Browser(page["webSocketDebuggerUrl"]);directory=ROOT/args.output;directory.mkdir(parents=True,exist_ok=True)
  evidence={"actual_browser":True,"synthetic":True,"model_requests":0,"checks":[],"cases":[],"screenshots":[]}
  def check(condition,label):
   assert browser.js(condition),label
@@ -118,7 +118,17 @@ def main():
   evidence["cases"].append({"id":case["id"],"dataset":case["dataset"],"cutoff":case["cutoff"],"scope":case["scope"],"passed":True})
  try:
   browser.call("Page.enable");browser.call("Runtime.enable");browser.call("Emulation.setDeviceMetricsOverride",width=1440,height=1200,deviceScaleFactor=1,mobile=False)
-  browser.call("Page.navigate",url=APP);browser.until("typeof state!=='undefined' && state.token && !state.busy && state.datasets.length>0")
+  browser.call("Page.navigate",url=args.app);browser.until("typeof state!=='undefined' && state.token && !state.busy && state.datasets.length>0")
+  if args.source_boundaries_only:
+   calculate(CASES[0]);browser.js("document.querySelector('[data-evidence-index=\"0\"]').click()")
+   browser.until("document.querySelector('#evidence-dialog').open && !state.busy")
+   check("document.querySelector('#original-row').textContent.includes('\"total_count\": 9007199254740993') && !document.querySelector('#original-row').textContent.includes('\"total_count\": 9007199254740992')","real isolated source API preserves exact admitted integer digits in evidence")
+   check("state.sources.source_rows_text.counts.some(r=>r.record_id==='COUNT-A'&&r.record_text.includes('9007199254740993'))","server-generated original row string crosses HTTP unchanged")
+   capture("01-exact-source-integer.png")
+   check("Array.from(document.querySelectorAll('#history time')).some(e=>e.textContent.trim()===state.events.at(-1).at)","real audit event at timestamp is visible")
+   evidence["passed"]=True;(directory/"checks.json").write_text(json.dumps(evidence,ensure_ascii=False,indent=2),encoding="utf-8")
+   print(json.dumps({"passed":True,"checks":len(evidence["checks"]),"cases":0,"screenshots":len(evidence["screenshots"]),"fixture":"isolated source admission boundary, not frozen gold","model_requests":0}))
+   return
   check("document.querySelector('#route-mode').value==='keyword'","default intent proposal is CPU keyword mode")
   for case in CASES:
    calculate(case);assert_case(case)
@@ -140,6 +150,17 @@ def main():
   browser.call("Input.dispatchKeyEvent",type="keyUp",key="Escape",code="Escape",windowsVirtualKeyCode=27,nativeVirtualKeyCode=27)
   browser.until("!document.querySelector('#evidence-dialog').open && document.activeElement.dataset.evidenceIndex==='0'")
   check("document.activeElement.dataset.evidenceIndex==='0'","Escape keyboard dismissal restores originating source focus")
+  browser.js("document.querySelector('[data-record-tab=\"conversions\"]').click();window.__sourceOriginalFetch=window.fetch;window.fetch=(()=>{const original=window.fetch;return async(...args)=>{if(String(args[0]).startsWith('/api/sources?')){await new Promise(done=>window.__sourceRelease=done);}return original(...args)}})();const index=state.receipt.result.conversions.findIndex(r=>r.record_id==='TIME-B');document.querySelector('[data-evidence-index=\"'+index+'\"]').click()")
+  browser.until("typeof window.__sourceRelease==='function' && state.busy")
+  browser.js("document.querySelector('[data-record-tab=\"accepted\"]').click();window.__sourceRelease();delete window.__sourceRelease;window.fetch=window.__sourceOriginalFetch;delete window.__sourceOriginalFetch")
+  browser.until("document.querySelector('#evidence-dialog').open && !state.busy")
+  check("state.recordTab==='accepted' && state.evidence.tab==='conversions' && document.querySelector('#evidence-title').textContent.includes('TIME-B')","delayed real source read preserves original conversion record despite tab switch")
+  check("document.querySelector('#evidence-meta').textContent.startsWith('교대 시간') && document.querySelector('#original-row').textContent.includes('TIME-B') && document.querySelector('#evidence-processing strong').textContent==='명시된 단위 변환'","delayed drawer keeps source type, original row and processing category together")
+  capture("16-delayed-source-tab-switch.png")
+  browser.js("document.querySelector('#close-evidence').click()")
+  browser.until("document.activeElement.dataset.recordTab==='conversions'")
+  check("document.activeElement.dataset.recordTab==='conversions'","changed source category focuses originating tab rather than unrelated same-index row")
+  check("Array.from(document.querySelectorAll('#history time')).some(e=>e.textContent.trim()===state.events.at(-1).at)","server audit event at timestamp is rendered visibly")
   browser.js("document.querySelector('#intent-query').value='A와 B 합산 성능률';document.querySelector('#route-submit').click()")
   browser.until("!state.busy && !!state.route")
   check("state.route.action==='calculate' && document.querySelector('#metric').value==='oee' && document.querySelector('#calculate').disabled","intent proposal does not silently apply or calculate")

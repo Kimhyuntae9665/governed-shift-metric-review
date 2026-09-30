@@ -64,3 +64,7 @@ The video is encoded from36 native viewport JPEG frames with measured inter-fram
 
 ### 19-actual-source-drawer.png
 ![Actual synthetic UI: 19-actual-source-drawer](19-actual-source-drawer.png)
+
+## Delayed source selection and exact integers
+
+[Delayed actual source GET plus category switch](16-delayed-source-tab-switch.png) retains TIME-B and its conversion category. [Exact integer source evidence](source-boundary/01-exact-source-integer.png) comes from a separate deliberately modified synthetic fixture and actual loopback HTTP listener; frozen project inputs were untouched. The drawer displays9007199254740993 exactly. Neither capture invokes a model or fabricates source responses. [Four isolated checks](source-boundary/checks.json) remain separate from the97 assertions across11 main calculation scenarios. The16-19 model-flow images above remain earlier stored-model evidence.

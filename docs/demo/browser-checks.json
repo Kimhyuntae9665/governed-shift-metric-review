@@ -68,6 +68,11 @@
     "capture excludes credentials and private host/path",
     "drawer close restores originating source focus",
     "Escape keyboard dismissal restores originating source focus",
+    "delayed real source read preserves original conversion record despite tab switch",
+    "delayed drawer keeps source type, original row and processing category together",
+    "capture excludes credentials and private host/path",
+    "changed source category focuses originating tab rather than unrelated same-index row",
+    "server audit event at timestamp is rendered visibly",
     "intent proposal does not silently apply or calculate",
     "human proposal acknowledgement required",
     "capture excludes credentials and private host/path",
@@ -178,7 +183,7 @@
   "screenshots": [
     {
       "file": "01-baseline.png",
-      "sha256": "ced866fece8a722d3297d52921b317c19cb188347d96ccf74aa3cad9fa27aef8",
+      "sha256": "12240fae35fea469169abf1087bbd15e9fc5e60aa42d29f1a37bd31d17ccd603",
       "actual_ui": true,
       "paint_settled": true,
       "viewport": {
@@ -202,7 +207,7 @@
     },
     {
       "file": "02-correction-before.png",
-      "sha256": "1fce9c132213886b3c5f6b2a1025dcaf032cd3ff36ac1ee452f22c974db87817",
+      "sha256": "e86263b4561f67254ffc9febd621b8fcd6c9397bf37345460cacc4a83ffbd67d",
       "actual_ui": true,
       "paint_settled": true,
       "viewport": {
@@ -226,7 +231,7 @@
     },
     {
       "file": "03-correction-after.png",
-      "sha256": "ff2b5d7dce82d14688f696fafbcbf5b092ddc7317650d7d4f8ffe578616e6ef3",
+      "sha256": "d53c08df1c98abc407d466de06def97facddabf1e40291986818f785fe184042",
       "actual_ui": true,
       "paint_settled": true,
       "viewport": {
@@ -250,7 +255,7 @@
     },
     {
       "file": "04-conflicting-revision.png",
-      "sha256": "81b382e87d2541024d3d2a7ae1dc06d689d9aab21d967b271ef694fb7aa79c1e",
+      "sha256": "14e23dc3cea878307d4725159416e01df5e6e6eab09f9a57c9995624b6df8d9c",
       "actual_ui": true,
       "paint_settled": true,
       "viewport": {
@@ -274,7 +279,7 @@
     },
     {
       "file": "05-missing-time-b.png",
-      "sha256": "6f0e416d6937d89638032ea99e1bcec8e5baa7933889914f8e6af3edbce5e4cd",
+      "sha256": "97f28867f9451449877ba5f4be0c68d907a6390d20d39a1074dfc6b38213b08a",
       "actual_ui": true,
       "paint_settled": true,
       "viewport": {
@@ -298,7 +303,7 @@
     },
     {
       "file": "06-unknown-unit-b.png",
-      "sha256": "4d581223c985b28a910b827dcce5b38c5166b25b0b026772297e564c317df01d",
+      "sha256": "125440f0e39894fa19de8d44e0e0cbd5b7d72a6e8da129d34eebde1416fa1a67",
       "actual_ui": true,
       "paint_settled": true,
       "viewport": {
@@ -322,7 +327,7 @@
     },
     {
       "file": "07-missing-good.png",
-      "sha256": "22d4c8aff952af5301140111b6d58b5b73e5e2c36f4c83aa6e5374b066ff9641",
+      "sha256": "ebe4d2135efb825f25ec416548fbff715bb13befdf6691478615b01266d21258",
       "actual_ui": true,
       "paint_settled": true,
       "viewport": {
@@ -346,7 +351,7 @@
     },
     {
       "file": "08-performance-over-100.png",
-      "sha256": "6c85a10c784550168320435369deb41972bdefa793c063c34245eefcdd2fde99",
+      "sha256": "efd6e60dfb12de18b8b60f569aa1b146c4b98f2bd233928912ed13751ad700e5",
       "actual_ui": true,
       "paint_settled": true,
       "viewport": {
@@ -370,7 +375,7 @@
     },
     {
       "file": "09-original-evidence.png",
-      "sha256": "f251884cc4dea605ea3d715c3047fd56abdf518f561eb8eb13668f2bd724c8e4",
+      "sha256": "40cca69f5257e2e8a9b6868713711c229ca707d139e19ea3c4393f69d16df8df",
       "actual_ui": true,
       "paint_settled": true,
       "viewport": {
@@ -393,8 +398,32 @@
       }
     },
     {
+      "file": "16-delayed-source-tab-switch.png",
+      "sha256": "3d017b8015f6bac3719b0e929d6ee4900be8d5c28819a53071a392c7df52f019",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 606
+      },
+      "table": {
+        "top": -100.34375,
+        "bottom": 348.171875,
+        "rows": 4
+      }
+    },
+    {
       "file": "10-intent-proposal.png",
-      "sha256": "e686b139323b0c70f21b127931fb48f5d97d3d239f778392b6fce5d612441591",
+      "sha256": "1008b0cfdb49a783bd951b594af3497faa346570e10f12061aeb2344708eb53c",
       "actual_ui": true,
       "paint_settled": true,
       "viewport": {
@@ -418,7 +447,7 @@
     },
     {
       "file": "11-review-recorded.png",
-      "sha256": "626484ffa205df414a07cd55bf203d0d583bf236e7ce06161b516db3f44756e8",
+      "sha256": "ecbf657992551430afa35f070f49ae09ccee77946f165b314ef8013e675c17e1",
       "actual_ui": true,
       "paint_settled": true,
       "viewport": {

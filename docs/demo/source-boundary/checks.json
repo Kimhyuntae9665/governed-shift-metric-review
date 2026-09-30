@@ -1,0 +1,39 @@
+{
+  "actual_browser": true,
+  "synthetic": true,
+  "model_requests": 0,
+  "checks": [
+    "real isolated source API preserves exact admitted integer digits in evidence",
+    "server-generated original row string crosses HTTP unchanged",
+    "capture excludes credentials and private host/path",
+    "real audit event at timestamp is visible"
+  ],
+  "cases": [],
+  "screenshots": [
+    {
+      "file": "01-exact-source-integer.png",
+      "sha256": "783d8faa2a9fa0f040e979048f507ca1b6ba089e0578a73e3a9a605b94c41759",
+      "actual_ui": true,
+      "paint_settled": true,
+      "viewport": {
+        "width": 1440,
+        "height": 1200
+      },
+      "visual_viewport": {
+        "width": 1425,
+        "height": 1200,
+        "scale": 1
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "table": {
+        "top": 505.65625,
+        "bottom": 954.171875,
+        "rows": 4
+      }
+    }
+  ],
+  "passed": true
+}

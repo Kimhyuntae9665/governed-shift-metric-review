@@ -83,8 +83,8 @@ localhost 1요청, 컨텍스트4096, 출력256, temperature0, think:false, trunc
 
 ## 검증 자료와 분모
 
-- Python 테스트 **73개 = 고정 합성 gold23개 + 나머지 공학 회귀50개**. gold를 별도23개로 더해 합산하지 않습니다.
-- 실제 Chrome 브라우저 **11개 사례 / 92개 assertion / CPU 화면15장 + 실제 모델 흐름 화면4장**. 자세한 구성은 [UI 검증](docs/ui.md)에 따릅니다. CPU 계산·명시적 UI 경계 시험이며 실제 모델 평가와 다릅니다.
+- Python 테스트 **74개 = 고정 합성 gold23개 + 나머지 공학 회귀51개**. gold를 별도23개로 더해 합산하지 않습니다.
+- 실제 Chrome 브라우저 **11개 사례 / 97개 assertion / CPU 화면16장 + 실제 모델 흐름 화면4장**. 자세한 구성은 [UI 검증](docs/ui.md)에 따릅니다. CPU 계산·명시적 UI 경계 시험이며 실제 모델 평가와 다릅니다.
 - 모델 개발 측정과 최초 실패는 [평가 manifest](docs/evaluation.md) 및 raw trace에 따릅니다. 같은 개발 사례를 수정 전후 반복한 것이며 독립 heldout 정확도가 아닙니다.
 - 독립 검토에서 발견한 승인 플래그 타입·최신 개정 fallback·SQLite 연결 간 중복 검토 경합을 수정했고 해당 회귀를 보호합니다. 검토 범위와 잔여 제한은 [보안 기록](docs/security-review.md)에 명시합니다.
 
@@ -110,3 +110,7 @@ localhost 1요청, 컨텍스트4096, 출력256, temperature0, think:false, trunc
 ## 라이선스·데이터·재사용
 
 코드와 자체 합성 fixture는 MIT. Ollama와 Qwen 모델은 각 배포처 라이선스가 별도로 적용되며 가중치를 포함하지 않습니다. 기업 자료·기술 로고는 출처/권리 표기에 따르고 우리 MIT 코드로 재라이선스하지 않습니다. n8n 템플릿 JSON을 복사·활성화하지 않았습니다. [재사용 기록](docs/reuse.md)과 diagram asset provenance를 참고하세요.
+
+## Source display boundary follow-up
+
+Authorized evidence uses server-produced exact row text, preserves a selected category across delayed source reads, and shows the server audit timestamp. The current native CPU run passes11 calculation scenarios and97 assertions with16 screenshots. A separate isolated real HTTP source fixture passes4 assertions and1 screenshot for integer9007199254740993; it does not alter frozen inputs or add benchmark cases. The74 Python tests comprise23 frozen gold cases and51 other regressions. Independent read-only review found no additional High/Medium issue. See [UI evidence and limits](docs/ui.md).

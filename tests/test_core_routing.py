@@ -29,6 +29,17 @@ class CoreTests(unittest.TestCase):
   self.assertEqual(a['result']['combined']['metrics']['oee']['exact'],'27/40')
   b=self.calculate(PROFILES['analyst'],{'scope':'B'})
   self.assertEqual(b['result']['combined']['metrics']['oee']['exact'],'1')
+ def test_source_row_text_preserves_large_integer_and_exact_identity(self):
+  snapshot=self.store._load()
+  row=next(r for r in snapshot['sources']['mes_counts']['records'] if r.get('dataset_id')=='baseline' and r.get('record_id')=='COUNT-A')
+  row['total_count']=9007199254740993;row['revision']=9007199254740993
+  with patch.object(self.store,'_load',return_value=snapshot):source=self.store.sources(PROFILES['analyst'],'baseline','PLANT-A')
+  text=next(r for r in source['source_rows_text']['counts'] if r['record_id']=='COUNT-A')
+  self.assertIn('"total_count": 9007199254740993',text['record_text'])
+  self.assertEqual(text['revision_exact'],'9007199254740993')
+  self.assertEqual(json.loads(text['record_text']),row)
+  self.assertEqual(len(text['record_sha256']),64)
+  self.assertTrue(all(json.loads(r['record_text'])['site_id']=='PLANT-A' for kind in source['source_rows_text'].values() for r in kind))
  def test_cutoff_and_metric_changes_fingerprint_without_rewriting_historical(self):
   before=self.calculate(PROFILES['reviewer'],{'dataset_id':'correction_review','as_of_cutoff':'2026-10-01T23:30:00+09:00'})
   after=self.calculate(PROFILES['reviewer'],{'dataset_id':'correction_review'})

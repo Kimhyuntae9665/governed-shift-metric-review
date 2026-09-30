@@ -4,8 +4,8 @@ Numerical gold and input snapshot were frozen before implementation/model use at
 
 ## Distinct denominators
 
-- Python unittest73 = 23 frozen numerical gold cases +50 other engineering regressions. The23 are included, not added again.
-- Browser11 declared numerical scenarios,92 assertions,15 CPU screenshots; display-boundary checks are not extra benchmark cases. Native AX naming/focus/Escape checks included. See UI document and browser-checks.json.
+- Python unittest74 = 23 frozen numerical gold cases +51 other engineering regressions. The23 are included, not added again.
+- Browser11 declared numerical scenarios,97 assertions,16 CPU screenshots; display-boundary checks are not extra benchmark cases. Native AX naming/focus/Escape checks included. See UI document and browser-checks.json.
 - Routing8 predeclared development queries =4 intended metric cases +4 policy/authorization guards. The same queries were reused during repair; no independent heldout measurement.
 - Live GPU18requests =4 initial multi-field +4 complete-intent enum +4 metric-only with parser bug +4 final metric-only +2 actual UI recordings. Repeated calls on four queries are not18 independent test cases.
 - Final four metric proposals match4/4 declared metric IDs; their explicit shifts match after CPU parser repair. The final adapter's four guard cases use no model calls. Fixed keyword baseline matches2/4 metric+scope cases and the guards. This small development comparison is not a general semantic retrieval or factory accuracy claim.
@@ -34,3 +34,5 @@ node --check static/app.js
 For live routing use existing localhost Ollama plus documented shared inference lease, then scripts/evaluate_routing.py --output artifacts/fresh-routing.json. The output path must be new. This deliberately reruns the same development queries and must be labeled accordingly.
 
 This suite is a synthetic numerical/engineering validation, not a manufacturing expert benchmark, industry performance study or OEE improvement estimate.
+
+Source display follow-up:97 main browser assertions/16 CPU captures plus4 separate isolated real HTTP source-boundary assertions/1 capture. The frozen project sources and23 numerical gold cases are unchanged. No model request was made; this is display/integrity coverage, not model accuracy.

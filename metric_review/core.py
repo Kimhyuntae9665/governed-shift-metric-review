@@ -66,12 +66,15 @@ class Store:
   return cat
  def sources(self,principal,dataset_id,site_id):
   self._site(principal,site_id);s=self._load();manifest=self._dataset(s,dataset_id,site_id)
-  out={};hashes={}
+  out={};hashes={};row_texts={}
   for kind,label in [('mes_counts','counts'),('shift_time','times')]:
    source=s['sources'][kind]
    out[label]=[clone(r) for r in source['records'] if r.get('dataset_id')==dataset_id and r.get('site_id')==site_id]
+   # Preserve authorized source integers across JavaScript's JSON-number boundary.
+   # The text is a server serialization of the row, not the export's byte layout.
+   row_texts[label]=[{'record_id':r.get('record_id'),'revision_exact':str(r.get('revision')),'record_sha256':digest(r),'record_text':json.dumps(r,ensure_ascii=False,indent=2,allow_nan=False),'key_text':json.dumps({k:r.get(k) for k in ('site_id','line_id','business_date','shift_id','product_id','cycle_version')},ensure_ascii=False,allow_nan=False),'issued_at':r.get('issued_at')} for r in out[label]]
    hashes[kind]=source['source_sha256']
-  return {'sources':out,'provenance':hashes,'manifest':manifest,'historical_record_time':True,'export_received_at':{k:v['receipt']['received_at'] for k,v in s['sources'].items()}}
+  return {'sources':out,'source_rows_text':row_texts,'provenance':hashes,'manifest':manifest,'historical_record_time':True,'export_received_at':{k:v['receipt']['received_at'] for k,v in s['sources'].items()}}
  def _request(self,principal,body,snapshot):
   if not isinstance(body,dict) or set(body)!={'dataset_id','site_id','business_date','as_of_cutoff','metric_id','scope'}:raise ValueError('explicit_selectors_required')
   site=body.get('site_id','PLANT-A');self._site(principal,site)
