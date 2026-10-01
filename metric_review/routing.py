@@ -2,7 +2,34 @@
 import re
 METRICS=('availability','performance','quality','oee')
 SCOPES=('combined','A','B')
-KEYWORDS={'availability':('availability','가용성'),'performance':('performance','성능률','성능'),'quality':('quality','품질률','품질'),'oee':('oee','종합설비효율')}
+KEYWORDS={'availability':('availability','가용성'),'performance':('performance','성능률','성능'),'quality':('quality','양품률','양품비중','품질률','품질'),'oee':('oee','종합설비효율')}
+
+def explicit_scope(query):
+    """Resolve only the declared A/B shifts; ambiguous exclusions need confirmation."""
+    if re.search(r'(?:교대|shift)\s*[C-Z](?![A-Z0-9_])|\b[C-Z]\s*(?:교대|shift)',query,re.I):
+        return None
+    if re.search(r'제외하지|배제하지|빼지|않|말고|말아|금지|아닌|(?:^|\s)(?:안|못)(?:\s|되|돼)|\bnot\b',query,re.I):
+        return None
+    term=r'(?:(?:교대|shift)\s*([AB])(?![a-z0-9_])|(?<![a-z0-9_])([AB])\s*(?:교대|shift))'
+    mentions=set()
+    excluded=set()
+    for match in re.finditer(term,query,re.I):
+        shift=(match.group(1) or match.group(2)).upper()
+        mentions.add(shift)
+        suffix=query[match.end():]
+        prefix=query[:match.start()]
+        if (re.match(r'\s*(?:[이가을를은는]\s*)?(?:제외|배제|빼고|빼)',suffix)
+                or re.search(r'\b(?:except|excluding|exclude|without)\s*$',prefix,re.I)):
+            excluded.add(shift)
+    has_exclusion=re.search(r'제외|배제|빼|\b(?:except|excluding|exclude|without)\b',query,re.I)
+    if has_exclusion:
+        if len(excluded)!=1 or len(mentions)>1:
+            return None
+        return 'B' if 'A' in excluded else 'A'
+    # A+B, A와 B 교대 are explicit combined scopes, not a lone B mention.
+    if re.search(r'(?<![a-z0-9_])A\s*(?:\+|와|및|,|and)\s*B(?![a-z0-9_])',query,re.I):
+        mentions.update(('A','B'))
+    return next(iter(mentions)) if len(mentions)==1 else 'combined'
 def guard(query,authorized_sites,site_id):
     if not isinstance(query,str) or not query.strip() or len(query.encode())>1800:raise ValueError('invalid_route_query')
     if site_id not in authorized_sites:raise PermissionError('site_denied')
@@ -18,15 +45,20 @@ def guard(query,authorized_sites,site_id):
 def route_keyword(query,authorized_sites,site_id):
     blocked=guard(query,authorized_sites,site_id)
     if blocked:return dict(blocked,method='keyword')
-    found=[m for m,words in KEYWORDS.items() if any(w in query.lower() for w in words)]
+    normalized=re.sub(r'\s+','',query.lower())
+    found=[m for m,words in KEYWORDS.items() if any(w in normalized for w in words)]
     if len(found)!=1:
         return {'action':'clarify' if len(found)>1 else 'unsupported','metric_id':None,'scope':None,'reason_code':'ambiguous_metric' if found else 'outside_catalog','method':'keyword'}
-    a=bool(re.search(r'(?:교대|shift)\s*A\b|\bA\s*교대',query,re.I))
-    b=bool(re.search(r'(?:교대|shift)\s*B\b|\bB\s*교대',query,re.I))
-    return {'action':'calculate','metric_id':found[0],'scope':'A' if a and not b else 'B' if b and not a else 'combined','reason_code':'selected_catalog','method':'keyword'}
+    scope=explicit_scope(query)
+    if scope is None:
+        return {'action':'clarify','metric_id':None,'scope':None,'reason_code':'explicit_shift_required','method':'keyword'}
+    return {'action':'calculate','metric_id':found[0],'scope':scope,'reason_code':'selected_catalog','method':'keyword'}
 def route_model(query,authorized_sites,site_id):
     blocked=guard(query,authorized_sites,site_id)
     if blocked:return dict(blocked,method='policy_guard',model_requested=False)
+    scope=explicit_scope(query)
+    if scope is None:
+        return {'action':'clarify','metric_id':None,'scope':None,'reason_code':'explicit_shift_required','method':'policy_guard','model_requested':False}
     from .llm import request_json
     # Model proposes a metric only. Explicit shift scope is a deterministic
     # parser result, never a model-generated join selector.
@@ -42,9 +74,7 @@ def route_model(query,authorized_sites,site_id):
     if not isinstance(parsed,dict) or set(parsed)!={'metric'} or parsed['metric'] not in choices:raise RuntimeError('invalid_route_schema')
     kind=parsed['metric']
     if kind in METRICS:
-        a=bool(re.search(r'(?:교대|shift)\s*A\b|\bA\s*교대',query,re.I))
-        b=bool(re.search(r'(?:교대|shift)\s*B\b|\bB\s*교대',query,re.I))
-        parsed={'action':'calculate','metric_id':kind,'scope':'A' if a and not b else 'B' if b and not a else 'combined','reason_code':'selected_catalog'}
+        parsed={'action':'calculate','metric_id':kind,'scope':scope,'reason_code':'selected_catalog'}
     else:
         parsed={'action':kind,'metric_id':None,'scope':None,'reason_code':'ambiguous_metric' if kind=='clarify' else 'outside_catalog'}
     metrics['thinking_off_verified']=False

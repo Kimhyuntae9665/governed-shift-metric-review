@@ -1,0 +1,10 @@
+# Preserve exact source bytes used by integrity manifests on Windows clones.
+* text=auto eol=lf
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.gif -text
+*.mp4 -text
+*.pdf -text
+*.gguf -text
+*.woff2 -text

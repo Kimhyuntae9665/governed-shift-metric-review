@@ -160,3 +160,11 @@ localhost 1요청, 컨텍스트4096, 출력256, temperature0, think:false, trunc
 ## Source display boundary follow-up
 
 Authorized evidence uses server-produced exact row text, preserves a selected category across delayed source reads, and shows the server audit timestamp. The current native CPU run passes11 calculation scenarios and97 assertions with16 screenshots. A separate isolated real HTTP source fixture passes4 assertions and1 screenshot for integer9007199254740993; it does not alter frozen inputs or add benchmark cases. The74 Python tests comprise23 frozen gold cases and51 other regressions. Independent read-only review found no additional High/Medium issue. See [UI evidence and limits](docs/ui.md).
+
+## Windows CPU startup
+
+`.gitattributes` keeps hashed source files in LF form even when Git uses `core.autocrlf=true`; do not rewrite fixture bytes or regenerate source manifests to bypass an integrity failure. From a fresh clone, run `python -X utf8=0 scripts/check_startup.py` for a model-free startup/integrity check. The same check runs on Windows CI. Optional local-model lease and model-runner tests still require Linux/POSIX; this CPU startup check does not claim Windows inference support.
+
+## 한국어 질문 범위
+
+화면과 같은 `양품률`, `종합 설비 효율`과 한국어 조사를 인식합니다. A/B 두 교대만 있는 카탈로그에서 `교대 B를 제외한 OEE`는 A를 제안합니다. 두 교대를 함께 거론한 제외, 이중 부정, 알 수 없는 교대는 합산으로 추측하지 않고 명확화를 요청합니다. 모델 모드에서도 같은 교대 파서를 먼저 적용합니다. 이 변경은 계산 결과나 기존 고정 평가 자료를 바꾸지 않습니다.

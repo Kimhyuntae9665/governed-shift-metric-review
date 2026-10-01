@@ -13,3 +13,17 @@ jobs:
           node-version: '22'
       - run: python -m unittest discover -s tests -v
       - run: node --check static/app.js
+
+  windows-startup:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Start CPU core with clone line endings
+        run: python -X utf8=0 scripts/check_startup.py
+      - name: Windows language and exact-math regressions
+        run: |
+          python -m unittest discover -s tests -p test_routing_language.py -v
+          python -m unittest discover -s tests -p test_domain.py -v
